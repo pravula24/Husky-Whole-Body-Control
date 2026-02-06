@@ -1,0 +1,1 @@
+This repo contains the step files necessary to run the husky underactuated simulation in simscape, as well as the full husky CAD with the updated urdf structure to match the joint layout in simscape, as well as the simulation file itself.
