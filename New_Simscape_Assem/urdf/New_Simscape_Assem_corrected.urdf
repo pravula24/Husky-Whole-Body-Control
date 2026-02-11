@@ -1,0 +1,1665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version:   Build Version: 1.6.8715.24790
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter 
+     
+     MODIFIED: Joint limits have been corrected to allow realistic motion -->
+<robot
+  name="New_Simscape_Assem">
+  <link
+    name="Payload_Structure">
+    <inertial>
+      <origin
+        xyz="0.011584 -0.00010559 0.11423"
+        rpy="0 0 0" />
+      <mass
+        value="4.1675" />
+      <inertia
+        ixx="0.015415"
+        ixy="-7.8965E-08"
+        ixz="1.9561E-05"
+        iyy="0.023083"
+        iyz="2.7336E-07"
+        izz="0.035597" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Payload_Structure.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Payload_Structure.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Hip_Coupling_FR">
+    <inertial>
+      <origin
+        xyz="0.010875 -0.016201 0.00298"
+        rpy="0 0 0" />
+      <mass
+        value="0.028158" />
+      <inertia
+        ixx="6.702E-06"
+        ixy="2.2014E-12"
+        ixz="-1.9864E-07"
+        iyy="9.5392E-06"
+        iyz="1.9931E-12"
+        izz="1.2481E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Hip_Coupling_FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Hip_Coupling_FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Hip_Frontal_FR"
+    type="revolute">
+    <origin
+      xyz="-0.16725 0.045232 0.0074557"
+      rpy="1.5708 -0.014386 1.5708" />
+    <parent
+      link="Payload_Structure" />
+    <child
+      link="Hip_Coupling_FR" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.52"
+      upper="0.52"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="HS_Actuator_FR">
+    <inertial>
+      <origin
+        xyz="0.00311 0.016192 0.034844"
+        rpy="0 0 0" />
+      <mass
+        value="0.067844" />
+      <inertia
+        ixx="1.1918E-05"
+        ixy="-6.2189E-09"
+        ixz="-2.7463E-07"
+        iyy="1.7243E-05"
+        iyz="2.5876E-09"
+        izz="2.452E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/HS_Actuator_FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/HS_Actuator_FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Hip_Sagittal_FR"
+    type="revolute">
+    <origin
+      xyz="0.028 0 0"
+      rpy="-1.5708 -1.5602 -1.5708" />
+    <parent
+      link="Hip_Coupling_FR" />
+    <child
+      link="HS_Actuator_FR" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="Femur_Bone_Link_FR">
+    <inertial>
+      <origin
+        xyz="0.034748 0.00036808 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0034978" />
+      <inertia
+        ixx="7.1859E-08"
+        ixy="-1.4533E-08"
+        ixz="-2.1151E-23"
+        iyy="1.4436E-06"
+        iyz="-1.6544E-24"
+        izz="1.4438E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Femur_Bone_Link_FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Femur_Bone_Link_FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Femur_HS_Bone_FR"
+    type="fixed">
+    <origin
+      xyz="0.034467 0.0162 0.049654"
+      rpy="0 0 -0.010592" />
+    <parent
+      link="HS_Actuator_FR" />
+    <child
+      link="Femur_Bone_Link_FR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Knee_Actuator_FR">
+    <inertial>
+      <origin
+        xyz="0.027651 0.00029746 -0.017407"
+        rpy="0 0 0" />
+      <mass
+        value="0.079923" />
+      <inertia
+        ixx="1.4972E-05"
+        ixy="-4.8675E-08"
+        ixz="2.0342E-07"
+        iyy="2.3754E-05"
+        iyz="-1.101E-07"
+        izz="3.3937E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Knee_Actuator_FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Knee_Actuator_FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Femur_Knee_Bone_FR"
+    type="fixed">
+    <origin
+      xyz="0.069496 0.00073616 0"
+      rpy="-0.014387 0 0.010592" />
+    <parent
+      link="Femur_Bone_Link_FR" />
+    <child
+      link="Knee_Actuator_FR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Tibia_FR">
+    <inertial>
+      <origin
+        xyz="-0.00075906 -0.13541 -0.0036986"
+        rpy="0 0 0" />
+      <mass
+        value="0.043808" />
+      <inertia
+        ixx="3.5797E-05"
+        ixy="-2.1809E-07"
+        ixz="-1.1849E-08"
+        iyy="7.4699E-06"
+        iyz="-1.3207E-06"
+        izz="4.0682E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Tibia_FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Tibia_FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee_FR"
+    type="revolute">
+    <origin
+      xyz="0.034123 -0.015484 -0.049882"
+      rpy="-3.1272 0 0" />
+    <parent
+      link="Knee_Actuator_FR" />
+    <child
+      link="Tibia_FR" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.79"
+      upper="0.0"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="Foot_FR">
+    <inertial>
+      <origin
+        xyz="-3.1153E-09 0.054555 -6.059E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.06772" />
+      <inertia
+        ixx="4.4724E-05"
+        ixy="-5.6173E-12"
+        ixz="3.9841E-13"
+        iyy="9.3084E-06"
+        iyz="-7.9193E-12"
+        izz="4.3329E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Foot_FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Foot_FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Ankle_FR"
+    type="revolute">
+    <origin
+      xyz="-0.0022548 -0.33023 -0.0065344"
+      rpy="3.1416 0 1.5035" />
+    <parent
+      link="Tibia_FR" />
+    <child
+      link="Foot_FR" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.79"
+      upper="2.79"
+      effort="10"
+      velocity="5" />
+    <mimic
+      joint="Knee_FR"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+  <link
+    name="Fibula_FR">
+    <inertial>
+      <origin
+        xyz="-0.0013388 -0.18118 -0.00079653"
+        rpy="0 0 0" />
+      <mass
+        value="0.027121" />
+      <inertia
+        ixx="3.0139E-05"
+        ixy="-2.1289E-07"
+        ixz="-1.4006E-09"
+        iyy="1.3297E-06"
+        iyz="-1.8954E-07"
+        izz="3.0504E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Fibula_FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Fibula_FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee_FourBar_FR"
+    type="revolute">
+    <origin
+      xyz="-0.025705 0.0006448 -0.044815"
+      rpy="-3.1272 0 0" />
+    <parent
+      link="Knee_Actuator_FR" />
+    <child
+      link="Fibula_FR" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.79"
+      upper="2.79"
+      effort="10"
+      velocity="5" />
+    <mimic
+      joint="Knee_FR"
+      multiplier="1"
+      offset="0" />
+  </joint>
+  <link
+    name="Hip_Coupling_FL">
+    <inertial>
+      <origin
+        xyz="-0.017303 0.015071 0.00298"
+        rpy="0 0 0" />
+      <mass
+        value="0.028158" />
+      <inertia
+        ixx="6.702E-06"
+        ixy="2.2224E-12"
+        ixz="1.9864E-07"
+        iyy="9.5392E-06"
+        iyz="-1.9886E-12"
+        izz="1.2481E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Hip_Coupling_FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Hip_Coupling_FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Hip_Frontal_FL"
+    type="revolute">
+    <origin
+      xyz="-0.16725 -0.039143 -0.023862"
+      rpy="1.5708 0.0069367 1.5708" />
+    <parent
+      link="Payload_Structure" />
+    <child
+      link="Hip_Coupling_FL" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.52"
+      upper="0.52"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="HS_Actuator_FL">
+    <inertial>
+      <origin
+        xyz="0.0027269 0.024806 0.043022"
+        rpy="0 0 0" />
+      <mass
+        value="0.067844" />
+      <inertia
+        ixx="1.1918E-05"
+        ixy="-6.219E-09"
+        ixz="-2.7463E-07"
+        iyy="1.7243E-05"
+        iyz="2.5876E-09"
+        izz="2.452E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/HS_Actuator_FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/HS_Actuator_FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Hip_Sagittal_FL"
+    type="revolute">
+    <origin
+      xyz="-0.02625 -0.0097433 0"
+      rpy="1.5708 -1.5623 -1.5708" />
+    <parent
+      link="Hip_Coupling_FL" />
+    <child
+      link="HS_Actuator_FL" />
+    <axis
+      xyz="0.0029667 -0.34796 0.9375" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="Femur_Bone_Link_FL">
+    <inertial>
+      <origin
+        xyz="0.03475 -3.4694E-18 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0034978" />
+      <inertia
+        ixx="7.1705E-08"
+        ixy="-4.4422E-24"
+        ixz="6.9166E-23"
+        iyy="1.4438E-06"
+        iyz="-3.2574E-25"
+        izz="1.4438E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Femur_Bone_Link_FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Femur_Bone_Link_FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Femur_HS_Bone_FL"
+    type="fixed">
+    <origin
+      xyz="0.034083 0.024813 0.057832"
+      rpy="0.006937 0 0" />
+    <parent
+      link="HS_Actuator_FL" />
+    <child
+      link="Femur_Bone_Link_FL" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Knee_Actuator_FL">
+    <inertial>
+      <origin
+        xyz="0.027651 -7.3772E-05 -0.01741"
+        rpy="0 0 0" />
+      <mass
+        value="0.079923" />
+      <inertia
+        ixx="1.4972E-05"
+        ixy="-4.4326E-08"
+        ixz="2.0441E-07"
+        iyy="2.3754E-05"
+        iyz="1.0709E-07"
+        izz="3.3937E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Knee_Actuator_FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Knee_Actuator_FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Femur_Knee_Bone_FL"
+    type="fixed">
+    <origin
+      xyz="0.0695 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Femur_Bone_Link_FL" />
+    <child
+      link="Knee_Actuator_FL" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Tibia_FL">
+    <inertial>
+      <origin
+        xyz="0.0013233 -0.094467 -0.012286"
+        rpy="0 0 0" />
+      <mass
+        value="0.043808" />
+      <inertia
+        ixx="3.5796E-05"
+        ixy="2.6742E-07"
+        ixz="1.0785E-08"
+        iyy="7.4708E-06"
+        iyz="-1.3207E-06"
+        izz="4.0682E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Tibia_FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Tibia_FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee_FL"
+    type="revolute">
+    <origin
+      xyz="0.034506 -0.025143 -0.058068"
+      rpy="-3.1347 0 3.1416" />
+    <parent
+      link="Knee_Actuator_FL" />
+    <child
+      link="Tibia_FL" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.79"
+      upper="0.0"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="Foot_FL">
+    <inertial>
+      <origin
+        xyz="4.9046E-09 -0.054555 -6.5907E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.06772" />
+      <inertia
+        ixx="4.4724E-05"
+        ixy="-2.8637E-12"
+        ixz="-8.2868E-13"
+        iyy="9.3084E-06"
+        iyz="6.5864E-12"
+        izz="4.3329E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Foot_FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Foot_FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Ankle_FL"
+    type="revolute">
+    <origin
+      xyz="0.0031664 -0.28928 -0.015121"
+      rpy="3.1416 0 1.6381" />
+    <parent
+      link="Tibia_FL" />
+    <child
+      link="Foot_FL" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.79"
+      upper="2.79"
+      effort="10"
+      velocity="5" />
+    <mimic
+      joint="Knee_FL"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+  <link
+    name="Fibula_FL">
+    <inertial>
+      <origin
+        xyz="0.0016481 -0.18118 -0.00079654"
+        rpy="0 0 0" />
+      <mass
+        value="0.02712" />
+      <inertia
+        ixx="3.0139E-05"
+        ixy="2.6207E-07"
+        ixz="1.724E-09"
+        iyy="1.3305E-06"
+        iyz="-1.8954E-07"
+        izz="3.0504E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Fibula_FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Fibula_FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee_FourBar_FL"
+    type="revolute">
+    <origin
+      xyz="-0.025705 -0.00031091 -0.044819"
+      rpy="-3.1347 0 3.1416" />
+    <parent
+      link="Knee_Actuator_FL" />
+    <child
+      link="Fibula_FL" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.79"
+      upper="2.79"
+      effort="10"
+      velocity="5" />
+    <mimic
+      joint="Knee_FL"
+      multiplier="1"
+      offset="0" />
+  </joint>
+  <link
+    name="Hip_Coupling_BR">
+    <inertial>
+      <origin
+        xyz="0.010764 -0.016221 0.00298"
+        rpy="0 0 0" />
+      <mass
+        value="0.028158" />
+      <inertia
+        ixx="6.702E-06"
+        ixy="2.2026E-12"
+        ixz="-1.9864E-07"
+        iyy="9.5392E-06"
+        iyz="1.9927E-12"
+        izz="1.2481E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Hip_Coupling_BR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Hip_Coupling_BR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Hip_Frontal_BR"
+    type="revolute">
+    <origin
+      xyz="0.22765 0.045354 0.0071276"
+      rpy="1.5708 -0.013727 1.5708" />
+    <parent
+      link="Payload_Structure" />
+    <child
+      link="Hip_Coupling_BR" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.52"
+      upper="0.52"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="HS_Actuator_BR">
+    <inertial>
+      <origin
+        xyz="0.0023395 0.016202 0.034733"
+        rpy="0 0 0" />
+      <mass
+        value="0.067844" />
+      <inertia
+        ixx="1.1918E-05"
+        ixy="-6.2188E-09"
+        ixz="-2.7463E-07"
+        iyy="1.7243E-05"
+        iyz="2.5875E-09"
+        izz="2.452E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/HS_Actuator_BR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/HS_Actuator_BR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Hip_Sagittal_BR"
+    type="revolute">
+    <origin
+      xyz="0.028 0 0"
+      rpy="1.5708 -1.5339 1.5708" />
+    <parent
+      link="Hip_Coupling_BR" />
+    <child
+      link="HS_Actuator_BR" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="Femur_Bone_Link_BR">
+    <inertial>
+      <origin
+        xyz="0.03475 3.4694E-18 6.9389E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0034978" />
+      <inertia
+        ixx="7.1705E-08"
+        ixy="2.1517E-23"
+        ixz="2.835E-23"
+        iyy="1.4438E-06"
+        iyz="-4.6173E-24"
+        izz="1.4438E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Femur_Bone_Link_BR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Femur_Bone_Link_BR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Femur_HS_Bone_BR"
+    type="fixed">
+    <origin
+      xyz="0.033696 0.01621 0.049543"
+      rpy="-0.013736 0 0" />
+    <parent
+      link="HS_Actuator_BR" />
+    <child
+      link="Femur_Bone_Link_BR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Knee_Actuator_BR">
+    <inertial>
+      <origin
+        xyz="0.027634 -0.00097396 -0.01741"
+        rpy="0 0 0" />
+      <mass
+        value="0.079923" />
+      <inertia
+        ixx="1.498E-05"
+        ixy="2.7838E-07"
+        ixz="2.053E-07"
+        iyy="2.3744E-05"
+        iyz="2.8875E-08"
+        izz="3.3938E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Knee_Actuator_BR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Knee_Actuator_BR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Femur_Knee_Bone_BR"
+    type="fixed">
+    <origin
+      xyz="0.0695 0 0"
+      rpy="0.013727 -0.00050716 0.036927" />
+    <parent
+      link="Femur_Bone_Link_BR" />
+    <child
+      link="Knee_Actuator_BR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Tibia_BR">
+    <inertial>
+      <origin
+        xyz="-0.0043614 -0.13536 -0.0035872"
+        rpy="0 0 0" />
+      <mass
+        value="0.043808" />
+      <inertia
+        ixx="3.5771E-05"
+        ixy="-8.9062E-07"
+        ixz="-4.3222E-08"
+        iyy="7.4963E-06"
+        iyz="-1.32E-06"
+        izz="4.0682E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Tibia_BR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Tibia_BR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee_BR"
+    type="revolute">
+    <origin
+      xyz="0.034272 -0.017487 -0.049543"
+      rpy="3.1416 0 -0.036931" />
+    <parent
+      link="Knee_Actuator_BR" />
+    <child
+      link="Tibia_BR" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.79"
+      upper="0.0"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="Foot_BR">
+    <inertial>
+      <origin
+        xyz="-3.7324E-09 0.054555 -6.3422E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.06772" />
+      <inertia
+        ixx="4.4724E-05"
+        ixy="-4.7238E-12"
+        ixz="5.7482E-13"
+        iyy="9.3084E-06"
+        iyz="-7.48E-12"
+        izz="4.3329E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Foot_BR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Foot_BR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Ankle_BR"
+    type="revolute">
+    <origin
+      xyz="-0.010485 -0.33009 -0.006423"
+      rpy="-3.1416 0 1.5035" />
+    <parent
+      link="Tibia_BR" />
+    <child
+      link="Foot_BR" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.79"
+      upper="2.79"
+      effort="10"
+      velocity="5" />
+    <mimic
+      joint="Knee_BR"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+  <link
+    name="Fibula_BR">
+    <inertial>
+      <origin
+        xyz="-0.0056989 -0.1811 -0.00079654"
+        rpy="0 0 0" />
+      <mass
+        value="0.02712" />
+      <inertia
+        ixx="3.0113E-05"
+        ixy="-9.058E-07"
+        ixz="-5.9618E-09"
+        iyy="1.3567E-06"
+        iyz="-1.8945E-07"
+        izz="3.0504E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Fibula_BR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Fibula_BR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee_FourBar_BR"
+    type="revolute">
+    <origin
+      xyz="-0.025687 0.00094908 -0.04482"
+      rpy="3.1416 0 -0.036931" />
+    <parent
+      link="Knee_Actuator_BR" />
+    <child
+      link="Fibula_BR" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.79"
+      upper="2.79"
+      effort="10"
+      velocity="5" />
+    <mimic
+      joint="Knee_BR"
+      multiplier="1"
+      offset="0" />
+  </joint>
+  <link
+    name="Hip_Coupling_BL">
+    <inertial>
+      <origin
+        xyz="-0.017436 0.015044 0.00298"
+        rpy="0 0 0" />
+      <mass
+        value="0.028158" />
+      <inertia
+        ixx="6.702E-06"
+        ixy="2.2218E-12"
+        ixz="1.9864E-07"
+        iyy="9.5392E-06"
+        iyz="-1.9891E-12"
+        izz="1.2481E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Hip_Coupling_BL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Hip_Coupling_BL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Hip_Frontal_BL"
+    type="revolute">
+    <origin
+      xyz="0.22765 -0.039021 -0.02419"
+      rpy="1.5708 0.0076853 1.5708" />
+    <parent
+      link="Payload_Structure" />
+    <child
+      link="Hip_Coupling_BL" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.52"
+      upper="0.52"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="HS_Actuator_BL">
+    <inertial>
+      <origin
+        xyz="0.0035347 0.015024 0.041405"
+        rpy="0 0 0" />
+      <mass
+        value="0.067844" />
+      <inertia
+        ixx="1.1918E-05"
+        ixy="-6.2191E-09"
+        ixz="-2.7463E-07"
+        iyy="1.7243E-05"
+        iyz="2.5877E-09"
+        izz="2.452E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/HS_Actuator_BL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/HS_Actuator_BL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Hip_Sagittal_BL"
+    type="revolute">
+    <origin
+      xyz="-0.028 0 0"
+      rpy="-1.5708 -1.5312 1.5708" />
+    <parent
+      link="Hip_Coupling_BL" />
+    <child
+      link="HS_Actuator_BL" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="Femur_Bone_Link_BL">
+    <inertial>
+      <origin
+        xyz="0.034723 0.0013773 2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0034978" />
+      <inertia
+        ixx="7.3861E-08"
+        ixy="-5.4339E-08"
+        ixz="9.1421E-23"
+        iyy="1.4416E-06"
+        iyz="7.4446E-24"
+        izz="1.4438E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Femur_Bone_Link_BL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Femur_Bone_Link_BL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Femur_HS_Bone_BL"
+    type="fixed">
+    <origin
+      xyz="0.034891 0.015032 0.056215"
+      rpy="0 0 -0.039644" />
+    <parent
+      link="HS_Actuator_BL" />
+    <child
+      link="Femur_Bone_Link_BL" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Knee_Actuator_BL">
+    <inertial>
+      <origin
+        xyz="0.027651 -8.6906E-05 -0.01741"
+        rpy="0 0 0" />
+      <mass
+        value="0.079923" />
+      <inertia
+        ixx="1.4972E-05"
+        ixy="-4.4172E-08"
+        ixz="2.0444E-07"
+        iyy="2.3754E-05"
+        iyz="1.1477E-07"
+        izz="3.3937E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Knee_Actuator_BL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Knee_Actuator_BL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Femur_Knee_Bone_BL"
+    type="fixed">
+    <origin
+      xyz="0.069445 0.0027546 0"
+      rpy="0.0076914 0 0.039644" />
+    <parent
+      link="Femur_Bone_Link_BL" />
+    <child
+      link="Knee_Actuator_BL" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Tibia_BL">
+    <inertial>
+      <origin
+        xyz="0.0034637 -0.10411 -0.010259"
+        rpy="0 0 0" />
+      <mass
+        value="0.043808" />
+      <inertia
+        ixx="3.5766E-05"
+        ixy="9.6733E-07"
+        ixz="4.3441E-08"
+        iyy="7.5013E-06"
+        iyz="-1.32E-06"
+        izz="4.0682E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Tibia_BL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Tibia_BL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee_BL"
+    type="revolute">
+    <origin
+      xyz="0.033699 -0.015464 -0.056097"
+      rpy="-3.1339 0 -3.1416" />
+    <parent
+      link="Knee_Actuator_BL" />
+    <child
+      link="Tibia_BL" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.79"
+      upper="0.0"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="Foot_BL">
+    <inertial>
+      <origin
+        xyz="4.3292E-09 -0.054555 -6.5148E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.06772" />
+      <inertia
+        ixx="4.4724E-05"
+        ixy="-3.8843E-12"
+        ixz="-7.3451E-13"
+        iyy="9.3084E-06"
+        iyz="7.0526E-12"
+        izz="4.3329E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Foot_BL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Foot_BL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Ankle_BL"
+    type="revolute">
+    <origin
+      xyz="0.010124 -0.29882 -0.013095"
+      rpy="-3.1416 0 1.6381" />
+    <parent
+      link="Tibia_BL" />
+    <child
+      link="Foot_BL" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.79"
+      upper="2.79"
+      effort="10"
+      velocity="5" />
+    <mimic
+      joint="Knee_BL"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+  <link
+    name="Fibula_BL">
+    <inertial>
+      <origin
+        xyz="0.0061863 -0.18108 -0.00079653"
+        rpy="0 0 0" />
+      <mass
+        value="0.027121" />
+      <inertia
+        ixx="3.0107E-05"
+        ixy="9.8319E-07"
+        ixz="6.4716E-09"
+        iyy="1.3618E-06"
+        iyz="-1.8943E-07"
+        izz="3.0504E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Fibula_BL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New_Simscape_Assem/meshes/Fibula_BL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee_Fourbar_BL"
+    type="revolute">
+    <origin
+      xyz="-0.025705 -0.00034472 -0.044819"
+      rpy="-3.1339 0 -3.1416" />
+    <parent
+      link="Knee_Actuator_BL" />
+    <child
+      link="Fibula_BL" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.79"
+      upper="2.79"
+      effort="10"
+      velocity="5" />
+    <mimic
+      joint="Knee_BL"
+      multiplier="1"
+      offset="0" />
+  </joint>
+</robot>
